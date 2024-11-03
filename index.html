@@ -52,6 +52,7 @@
                     </div>
                     <p class="lead mb-5">QA Engineer (Game, Software, Service), Test Automation</p>
                     <div class="career-duration mb-5"></div>
+                    <div class="age-career-duration mb-5"></div>
                     <div class="social-icons">
                         <a class="social-icon" href="https://www.linkedin.com/in/jongmin89"><i class="fab fa-linkedin-in"></i></a>
                         <a class="social-icon" href="https://open.kakao.com/o/s6V5E5Xg"><i class="fa-solid fa-comments"></i></a>
@@ -230,7 +231,7 @@
                     <ul>
                         <li>
                             <i class="fas fa-file-powerpoint" style="font-size: 2rem;"></i>
-                            <a href="assets/docs/포트폴리오_업무 R&R 및 QA 프로세스_김종민.pdf" download>업무 R&R 및 QA 프로세스 문서</a>
+                            <a href="assets/docs/포트폴리오_업무 R&R 및 QA 프로세스_김종민.pdf" download>업무 R&R   QA 프로세스 문서</a>
                         </li>
                         <li>
                             <i class="fas fa-file-powerpoint" style="font-size: 2rem;"></i>
@@ -372,9 +373,11 @@
             const months = currentDate.getMonth() - startDate.getMonth();
             const totalMonths = years * 12 + months;
 
-            // Display the career duration
-            const careerDurationDiv = document.querySelector('.career-duration');
-            careerDurationDiv.innerHTML = `총 경력 : ${years}년`;
+            // Display the career duration and age together
+            const ageDiv = document.querySelector('.age-career-duration');
+            const birthDate = new Date('1989-05-26');
+            const age = currentDate.getFullYear() - birthDate.getFullYear();
+            ageDiv.innerHTML = `나이 : ${age}세 / 총 경력 : ${years}년`;
         </script>
     </body>
 </html>
