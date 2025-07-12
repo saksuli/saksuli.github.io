@@ -370,6 +370,7 @@ body {
   font-size: var(--font-size-lg);
   border: 3px solid var(--background-color);
   box-shadow: 0 4px 12px var(--shadow-medium);
+  z-index: 10;
 }
 
 .timeline-content {
@@ -385,6 +386,80 @@ body {
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
+}
+
+.timeline-content h3 .company-text {
+  display: inline;
+  white-space: nowrap;
+}
+
+/* Company background logos */
+.company-omni {
+  position: relative;
+}
+
+.company-omni::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url('../company/omni_logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.company-smilegate {
+  position: relative;
+}
+
+.company-smilegate::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url('../company/smilegate_logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.company-monster {
+  position: relative;
+}
+
+.company-monster::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url('../company/Monster_logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Ensure content stays above background */
+.timeline-content h3,
+.timeline-content p,
+.timeline-content ul {
+  position: relative;
+  z-index: 2;
 }
 
 .timeline-subtitle {
@@ -423,6 +498,8 @@ body {
   font-size: var(--font-size-sm);
   color: var(--text-light);
   font-style: italic;
+  display: inline;
+  margin-left: 4px;
 }
 
 /* ========================================
