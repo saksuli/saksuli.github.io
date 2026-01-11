@@ -733,7 +733,7 @@ body::before {
 }
 
 .company-omni::after {
-  background-image: url('../company/omni_logo.png');
+  background-image: url('../company/omni_logo_new.png');
 }
 
 .company-smilegate::after {
