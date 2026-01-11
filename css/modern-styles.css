@@ -4,44 +4,45 @@
    CSS Variables - Modern Color Palette
    ======================================== */
 :root {
-  /* Modern Light Theme Colors */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fc;
-  --bg-tertiary: #f0f2f7;
-  --bg-card: rgba(102, 126, 234, 0.05);
-  --bg-card-hover: rgba(102, 126, 234, 0.1);
+  /* Professional Light Theme - Refined Palette */
+  --bg-primary: #fafbfc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f4f6f8;
+  --bg-card: #ffffff;
+  --bg-card-hover: #ffffff;
 
-  /* Gradient Colors */
-  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  --gradient-warm: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-  --gradient-cool: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-  --gradient-hero: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  /* Sophisticated Gradient - Single accent */
+  --gradient-primary: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+  --gradient-secondary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  --gradient-accent: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  --gradient-warm: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --gradient-cool: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+  --gradient-hero: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
 
-  /* Text Colors */
-  --text-primary: #1a1a2e;
-  --text-secondary: rgba(26, 26, 46, 0.7);
-  --text-tertiary: rgba(26, 26, 46, 0.5);
-  --text-accent: #667eea;
+  /* Text Colors - Professional hierarchy */
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-tertiary: #9ca3af;
+  --text-accent: #2563eb;
 
-  /* Accent Colors */
-  --accent-primary: #667eea;
-  --accent-secondary: #764ba2;
-  --accent-tertiary: #f093fb;
+  /* Accent Colors - Corporate blue */
+  --accent-primary: #2563eb;
+  --accent-secondary: #4f46e5;
+  --accent-tertiary: #6366f1;
 
-  /* Glass Effect */
-  --glass-bg: rgba(255, 255, 255, 0.8);
-  --glass-border: rgba(102, 126, 234, 0.2);
-  --glass-shadow: 0 8px 32px rgba(102, 126, 234, 0.15);
+  /* Clean Card Effect */
+  --glass-bg: #ffffff;
+  --glass-border: #e5e7eb;
+  --glass-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
-  /* Shadows */
-  --shadow-sm: 0 2px 8px rgba(102, 126, 234, 0.1);
-  --shadow-md: 0 4px 16px rgba(102, 126, 234, 0.15);
-  --shadow-lg: 0 8px 32px rgba(102, 126, 234, 0.2);
-  --shadow-glow: 0 0 40px rgba(102, 126, 234, 0.2);
+  /* Professional Shadows - Subtle and refined */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 
-  /* Typography */
+  /* Typography - Clean and readable */
   --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
@@ -49,12 +50,12 @@
   --font-size-lg: 1.125rem;
   --font-size-xl: 1.25rem;
   --font-size-2xl: 1.5rem;
-  --font-size-3xl: 2rem;
-  --font-size-4xl: 2.5rem;
-  --font-size-5xl: 3.5rem;
-  --font-size-6xl: 4.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
 
-  /* Spacing */
+  /* Spacing - Consistent rhythm */
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
@@ -62,23 +63,23 @@
   --spacing-xl: 2rem;
   --spacing-2xl: 3rem;
   --spacing-3xl: 4rem;
-  --spacing-4xl: 6rem;
-  --spacing-5xl: 8rem;
+  --spacing-4xl: 5rem;
+  --spacing-5xl: 6rem;
 
   /* Layout */
-  --container-max-width: 1200px;
-  --nav-height: 80px;
-  --border-radius-sm: 0.5rem;
-  --border-radius-md: 1rem;
-  --border-radius-lg: 1.5rem;
-  --border-radius-xl: 2rem;
+  --container-max-width: 1140px;
+  --nav-height: 72px;
+  --border-radius-sm: 6px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
   --border-radius-full: 9999px;
 
-  /* Transitions */
+  /* Transitions - Smooth and professional */
   --transition-fast: 0.15s ease;
-  --transition-base: 0.3s ease;
-  --transition-slow: 0.5s ease;
-  --transition-spring: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s ease;
+  --transition-spring: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ========================================
@@ -106,21 +107,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Background Pattern */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 60%, rgba(240, 147, 251, 0.05) 0%, transparent 40%);
-  pointer-events: none;
-  z-index: -1;
-}
+/* Clean Background - No distracting patterns */
 
 /* Selection */
 ::selection {
@@ -151,7 +138,7 @@ body::before {
 }
 
 /* ========================================
-   Navigation - Glass Morphism Style
+   Navigation - Clean Professional Style
    ======================================== */
 .nav {
   position: fixed;
@@ -159,17 +146,14 @@ body::before {
   left: 0;
   right: 0;
   height: var(--nav-height);
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: #ffffff;
   border-bottom: 1px solid var(--glass-border);
   z-index: 1000;
   transition: all var(--transition-base);
 }
 
 .nav.scrolled {
-  background: rgba(255, 255, 255, 0.98);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-md);
 }
 
 .nav-container {
@@ -190,22 +174,17 @@ body::before {
 }
 
 .nav-profile {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--border-radius-full);
   object-fit: cover;
   object-position: center 20%;
-  border: 2px solid transparent;
-  background:
-    linear-gradient(var(--bg-primary), var(--bg-primary)) padding-box,
-    var(--gradient-primary) border-box;
-  box-shadow: 0 0 15px rgba(102, 126, 234, 0.3);
-  transition: all var(--transition-spring);
+  border: 2px solid var(--glass-border);
+  transition: all var(--transition-base);
 }
 
 .nav-profile:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(102, 126, 234, 0.5);
+  border-color: var(--accent-primary);
 }
 
 .nav-name {
@@ -306,43 +285,38 @@ body::before {
   padding: 0 var(--spacing-xl);
 }
 
-/* Section Title */
+/* Section Title - Clean and Professional */
 .section-title {
-  font-size: var(--font-size-4xl);
-  font-weight: 800;
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
   text-align: center;
-  margin-bottom: var(--spacing-4xl);
+  margin-bottom: var(--spacing-3xl);
+  color: var(--text-primary);
   position: relative;
-  display: inline-block;
-  width: 100%;
+  letter-spacing: -0.02em;
 }
 
 .section-title::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: var(--font-size-6xl);
-  font-weight: 900;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  opacity: 0.1;
-  white-space: nowrap;
-  pointer-events: none;
+  display: none;
 }
 
 .section-title span {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
+  -webkit-text-fill-color: initial;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent-primary);
+  margin: var(--spacing-md) auto 0;
+  border-radius: 2px;
 }
 
 /* ========================================
-   Hero / About Section
+   Hero / About Section - Clean Professional
    ======================================== */
 #about {
   min-height: 100vh;
@@ -350,52 +324,7 @@ body::before {
   align-items: center;
   padding-top: calc(var(--nav-height) + var(--spacing-4xl));
   padding-bottom: var(--spacing-4xl);
-  position: relative;
-  overflow: hidden;
-}
-
-/* Animated Background Orbs */
-#about::before,
-#about::after {
-  content: '';
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.5;
-  animation: float 20s ease-in-out infinite;
-}
-
-#about::before {
-  width: 500px;
-  height: 500px;
-  background: var(--accent-primary);
-  top: -200px;
-  right: -200px;
-  animation-delay: -5s;
-}
-
-#about::after {
-  width: 400px;
-  height: 400px;
-  background: var(--accent-tertiary);
-  bottom: -150px;
-  left: -150px;
-  animation-delay: -10s;
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translate(0, 0) scale(1);
-  }
-  25% {
-    transform: translate(30px, -30px) scale(1.1);
-  }
-  50% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  75% {
-    transform: translate(20px, 10px) scale(1.05);
-  }
+  background: var(--bg-secondary);
 }
 
 .about-content {
@@ -419,14 +348,12 @@ body::before {
 }
 
 .about-title {
-  font-size: var(--font-size-6xl);
-  font-weight: 900;
+  font-size: var(--font-size-5xl);
+  font-weight: 700;
   line-height: 1.1;
   margin-bottom: var(--spacing-lg);
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
 }
 
 .about-contact {
@@ -492,11 +419,8 @@ body::before {
 .stat-number {
   display: block;
   font-size: var(--font-size-4xl);
-  font-weight: 800;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-weight: 700;
+  color: var(--accent-primary);
   line-height: 1.2;
 }
 
@@ -517,36 +441,19 @@ body::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  color: var(--text-primary);
+  width: 44px;
+  height: 44px;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
   border-radius: var(--border-radius-md);
   text-decoration: none;
-  font-size: var(--font-size-xl);
-  transition: all var(--transition-spring);
-  position: relative;
-  overflow: hidden;
-}
-
-.social-link::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--gradient-primary);
-  opacity: 0;
-  transition: opacity var(--transition-base);
+  font-size: var(--font-size-lg);
+  transition: all var(--transition-base);
 }
 
 .social-link:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-glow);
-  border-color: var(--accent-primary);
-}
-
-.social-link:hover::before {
-  opacity: 1;
+  background: var(--accent-primary);
+  color: #ffffff;
 }
 
 .social-link i {
@@ -574,39 +481,28 @@ body::before {
 }
 
 .profile-img {
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center 20%;
-  border: 4px solid transparent;
-  background:
-    linear-gradient(var(--bg-primary), var(--bg-primary)) padding-box,
-    var(--gradient-primary) border-box;
-  box-shadow:
-    var(--shadow-lg),
-    0 0 30px rgba(102, 126, 234, 0.3),
-    0 0 60px rgba(118, 75, 162, 0.15);
+  border: 4px solid #ffffff;
+  box-shadow: var(--shadow-xl);
   position: relative;
   z-index: 1;
   transition: all var(--transition-base);
 }
 
 .profile-img:hover {
-  transform: scale(1.05);
-  box-shadow:
-    var(--shadow-glow),
-    0 0 40px rgba(102, 126, 234, 0.4),
-    0 0 80px rgba(118, 75, 162, 0.25);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl), 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 /* ========================================
-   Glass Card Base Style
+   Card Base Style - Clean and Professional
    ======================================== */
 .glass-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: #ffffff;
   border: 1px solid var(--glass-border);
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-xl);
@@ -614,14 +510,12 @@ body::before {
 }
 
 .glass-card:hover {
-  background: var(--bg-card-hover);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-5px);
+  border-color: var(--accent-primary);
   box-shadow: var(--shadow-lg);
 }
 
 /* ========================================
-   Timeline (Education & Career)
+   Timeline (Career)
    ======================================== */
 .timeline {
   position: relative;
@@ -635,7 +529,7 @@ body::before {
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, var(--accent-primary), var(--accent-tertiary));
+  background: var(--glass-border);
   border-radius: 2px;
 }
 
@@ -834,34 +728,14 @@ body::before {
 }
 
 .project-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: #ffffff;
   border: 1px solid var(--glass-border);
   border-radius: var(--border-radius-lg);
-  padding: var(--spacing-xl);
-  transition: all var(--transition-spring);
+  padding: var(--spacing-lg);
+  transition: all var(--transition-base);
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(20px);
   position: relative;
-  overflow: hidden;
-}
-
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gradient-primary);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform var(--transition-base);
-}
-
-.project-card:hover::before {
-  transform: scaleX(1);
 }
 
 .project-card.animate-in {
@@ -870,10 +744,8 @@ body::before {
 }
 
 .project-card:hover {
-  background: var(--bg-card-hover);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-lg);
 }
 
 .project-header {
