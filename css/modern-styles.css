@@ -719,15 +719,14 @@ body::before {
 .company-monster::after {
   content: '';
   position: absolute;
-  top: 50%;
-  right: var(--spacing-xl);
-  transform: translateY(-50%);
-  width: 100px;
-  height: 100px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.25;
+  background-position: center right;
+  opacity: 0.15;
   pointer-events: none;
   transition: opacity var(--transition-base);
   filter: grayscale(30%);
@@ -746,7 +745,7 @@ body::before {
 }
 
 .timeline-content:hover::after {
-  opacity: 0.35;
+  opacity: 0.25;
   filter: grayscale(0%);
 }
 
