@@ -722,14 +722,15 @@ body::before {
   top: 50%;
   right: var(--spacing-xl);
   transform: translateY(-50%);
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.15;
+  opacity: 0.25;
   pointer-events: none;
   transition: opacity var(--transition-base);
+  filter: grayscale(30%);
 }
 
 .company-omni::after {
@@ -745,7 +746,8 @@ body::before {
 }
 
 .timeline-content:hover::after {
-  opacity: 0.25;
+  opacity: 0.35;
+  filter: grayscale(0%);
 }
 
 .timeline-subtitle {
