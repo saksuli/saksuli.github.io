@@ -802,6 +802,27 @@ body::before {
   border-radius: 50%;
 }
 
+/* Career Category Titles */
+.career-category {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.career-category:first-of-type {
+  margin-top: var(--spacing-md);
+}
+
+.career-category i {
+  color: var(--accent-primary);
+  font-size: var(--font-size-sm);
+}
+
 /* ========================================
    Project Grid (Experience)
    ======================================== */
