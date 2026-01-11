@@ -909,6 +909,38 @@ body::before {
   font-size: var(--font-size-sm);
 }
 
+.project-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.project-info h3 {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.project-genre {
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+.project-description {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  margin: 0;
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--glass-border);
+}
+
+.project-header {
+  margin-bottom: var(--spacing-md);
+}
+
 .project-date {
   font-size: var(--font-size-sm);
   color: var(--accent-primary);
