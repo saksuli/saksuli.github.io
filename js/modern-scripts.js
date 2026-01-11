@@ -1,4 +1,4 @@
-// Modern Portfolio JavaScript
+// Modern Portfolio JavaScript - 2024 Update
 
 // ========================================
 // Constants and Configuration
@@ -6,16 +6,24 @@
 const CONFIG = {
   birthYear: 1989,
   careerStartYear: 2014,
-  navHeight: 70,
+  navHeight: 80,
   scrollOffset: 100,
-  animationDuration: 300
+  animationDuration: 300,
+  typingSpeed: 100,
+  typingDeleteSpeed: 50,
+  typingPauseTime: 2000,
+  roles: [
+    'QA Engineer',
+    'Test Automation Specialist',
+    'Quality Assurance Expert',
+    'Game QA Professional'
+  ]
 };
 
 // ========================================
 // Utility Functions
 // ========================================
 const utils = {
-  // Smooth scroll to element
   scrollToElement: (element, offset = CONFIG.navHeight) => {
     const targetPosition = element.offsetTop - offset;
     window.scrollTo({
@@ -24,17 +32,14 @@ const utils = {
     });
   },
 
-  // Calculate age from birth year
   calculateAge: (birthYear) => {
     return new Date().getFullYear() - birthYear;
   },
 
-  // Calculate career years
   calculateCareerYears: (startYear) => {
     return new Date().getFullYear() - startYear;
   },
 
-  // Throttle function for performance
   throttle: (func, limit) => {
     let inThrottle;
     return function() {
@@ -48,7 +53,6 @@ const utils = {
     };
   },
 
-  // Debounce function for performance
   debounce: (func, wait) => {
     let timeout;
     return function executedFunction(...args) {
@@ -59,11 +63,149 @@ const utils = {
       clearTimeout(timeout);
       timeout = setTimeout(later, wait);
     };
+  },
+
+  lerp: (start, end, factor) => {
+    return start + (end - start) * factor;
   }
 };
 
 // ========================================
-// Navigation Management
+// Typing Effect
+// ========================================
+class TypingEffect {
+  constructor(element, words, options = {}) {
+    this.element = element;
+    this.words = words;
+    this.typeSpeed = options.typeSpeed || CONFIG.typingSpeed;
+    this.deleteSpeed = options.deleteSpeed || CONFIG.typingDeleteSpeed;
+    this.pauseTime = options.pauseTime || CONFIG.typingPauseTime;
+    this.wordIndex = 0;
+    this.charIndex = 0;
+    this.isDeleting = false;
+    this.isPaused = false;
+
+    if (this.element) {
+      this.init();
+    }
+  }
+
+  init() {
+    this.type();
+  }
+
+  type() {
+    const currentWord = this.words[this.wordIndex];
+
+    if (this.isDeleting) {
+      this.element.textContent = currentWord.substring(0, this.charIndex - 1);
+      this.charIndex--;
+    } else {
+      this.element.textContent = currentWord.substring(0, this.charIndex + 1);
+      this.charIndex++;
+    }
+
+    let typeSpeed = this.isDeleting ? this.deleteSpeed : this.typeSpeed;
+
+    if (!this.isDeleting && this.charIndex === currentWord.length) {
+      typeSpeed = this.pauseTime;
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.charIndex === 0) {
+      this.isDeleting = false;
+      this.wordIndex = (this.wordIndex + 1) % this.words.length;
+      typeSpeed = 500;
+    }
+
+    setTimeout(() => this.type(), typeSpeed);
+  }
+}
+
+// ========================================
+// Cursor Glow Effect
+// ========================================
+class CursorGlow {
+  constructor() {
+    this.cursor = document.getElementById('cursor-glow');
+    this.mouseX = 0;
+    this.mouseY = 0;
+    this.cursorX = 0;
+    this.cursorY = 0;
+    this.isVisible = false;
+
+    if (this.cursor && window.innerWidth > 768) {
+      this.init();
+    }
+  }
+
+  init() {
+    document.addEventListener('mousemove', (e) => {
+      this.mouseX = e.clientX;
+      this.mouseY = e.clientY;
+
+      if (!this.isVisible) {
+        this.cursor.classList.add('active');
+        this.isVisible = true;
+      }
+    });
+
+    document.addEventListener('mouseleave', () => {
+      this.cursor.classList.remove('active');
+      this.isVisible = false;
+    });
+
+    this.animate();
+  }
+
+  animate() {
+    this.cursorX = utils.lerp(this.cursorX, this.mouseX, 0.1);
+    this.cursorY = utils.lerp(this.cursorY, this.mouseY, 0.1);
+
+    if (this.cursor) {
+      this.cursor.style.left = `${this.cursorX}px`;
+      this.cursor.style.top = `${this.cursorY}px`;
+    }
+
+    requestAnimationFrame(() => this.animate());
+  }
+}
+
+// ========================================
+// Scroll to Top Button
+// ========================================
+class ScrollToTop {
+  constructor() {
+    this.button = document.getElementById('scroll-top');
+    this.threshold = 300;
+
+    if (this.button) {
+      this.init();
+    }
+  }
+
+  init() {
+    window.addEventListener('scroll', utils.throttle(() => {
+      this.toggleVisibility();
+    }, 100));
+
+    this.button.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
+  toggleVisibility() {
+    if (window.scrollY > this.threshold) {
+      this.button.classList.add('visible');
+    } else {
+      this.button.classList.remove('visible');
+    }
+  }
+}
+
+// ========================================
+// Navigation Manager
 // ========================================
 class NavigationManager {
   constructor() {
@@ -73,7 +215,7 @@ class NavigationManager {
     this.navLinks = document.querySelectorAll('.nav-link');
     this.sections = document.querySelectorAll('.section');
     this.isMenuOpen = false;
-    
+
     this.init();
   }
 
@@ -83,12 +225,10 @@ class NavigationManager {
   }
 
   bindEvents() {
-    // Mobile menu toggle
     if (this.navToggle) {
       this.navToggle.addEventListener('click', () => this.toggleMobileMenu());
     }
 
-    // Close mobile menu when clicking on links
     this.navLinks.forEach(link => {
       link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -96,36 +236,35 @@ class NavigationManager {
       });
     });
 
-    // Handle scroll events
     window.addEventListener('scroll', utils.throttle(() => {
       this.updateActiveLink();
       this.handleNavScroll();
     }, 16));
 
-    // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
       if (!this.nav.contains(e.target) && this.isMenuOpen) {
         this.closeMobileMenu();
       }
     });
 
-    // Handle window resize
     window.addEventListener('resize', utils.debounce(() => {
       if (window.innerWidth > 768 && this.isMenuOpen) {
         this.closeMobileMenu();
       }
     }, 250));
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.isMenuOpen) {
+        this.closeMobileMenu();
+      }
+    });
   }
 
   toggleMobileMenu() {
     this.isMenuOpen = !this.isMenuOpen;
     this.navMenu.classList.toggle('active', this.isMenuOpen);
     this.navToggle.classList.toggle('active', this.isMenuOpen);
-    
-    // Animate hamburger menu
-    this.animateHamburger();
-    
-    // Prevent body scroll when menu is open
     document.body.style.overflow = this.isMenuOpen ? 'hidden' : '';
   }
 
@@ -136,23 +275,10 @@ class NavigationManager {
     document.body.style.overflow = '';
   }
 
-  animateHamburger() {
-    const spans = this.navToggle.querySelectorAll('span');
-    if (this.isMenuOpen) {
-      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-      spans[1].style.opacity = '0';
-      spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-    } else {
-      spans[0].style.transform = 'rotate(0) translate(0, 0)';
-      spans[1].style.opacity = '1';
-      spans[2].style.transform = 'rotate(0) translate(0, 0)';
-    }
-  }
-
   handleNavClick(link) {
     const targetId = link.getAttribute('href').substring(1);
     const targetElement = document.getElementById(targetId);
-    
+
     if (targetElement) {
       utils.scrollToElement(targetElement);
       this.closeMobileMenu();
@@ -161,12 +287,12 @@ class NavigationManager {
 
   updateActiveLink() {
     let current = '';
-    
+
     this.sections.forEach(section => {
       const sectionTop = section.offsetTop;
       const sectionHeight = section.clientHeight;
       const scrollPosition = window.scrollY + CONFIG.scrollOffset;
-      
+
       if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
         current = section.getAttribute('id');
       }
@@ -181,10 +307,7 @@ class NavigationManager {
   }
 
   handleNavScroll() {
-    const scrollY = window.scrollY;
-    
-    // Add/remove scrolled class for navigation styling
-    if (scrollY > 50) {
+    if (window.scrollY > 50) {
       this.nav.classList.add('scrolled');
     } else {
       this.nav.classList.remove('scrolled');
@@ -206,28 +329,60 @@ class ContentManager {
   }
 
   updateDynamicContent() {
-    // Update age
     const ageElement = document.getElementById('current-age');
     if (ageElement) {
       const age = utils.calculateAge(CONFIG.birthYear);
-      ageElement.textContent = age;
+      this.animateNumber(ageElement, age);
     }
 
-    // Update career years
     const careerElement = document.getElementById('career-years');
     if (careerElement) {
       const careerYears = utils.calculateCareerYears(CONFIG.careerStartYear);
-      careerElement.textContent = `${careerYears}+`;
+      this.animateNumber(careerElement, careerYears, '+');
     }
   }
 
+  animateNumber(element, target, suffix = '') {
+    const duration = 2000;
+    const startTime = performance.now();
+    const startValue = 0;
+
+    const animate = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Easing function (ease out cubic)
+      const easeProgress = 1 - Math.pow(1 - progress, 3);
+      const currentValue = Math.round(startValue + (target - startValue) * easeProgress);
+
+      element.textContent = currentValue + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    // Start animation when element is in view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          requestAnimationFrame(animate);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(element);
+  }
+
   setupLazyLoading() {
-    // Intersection Observer for lazy loading images
     const imageObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const img = entry.target;
-          img.src = img.dataset.src || img.src;
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+          }
           img.classList.add('loaded');
           observer.unobserve(img);
         }
@@ -237,7 +392,6 @@ class ContentManager {
       rootMargin: '50px'
     });
 
-    // Observe all images with loading="lazy"
     const lazyImages = document.querySelectorAll('img[loading="lazy"]');
     lazyImages.forEach(img => {
       imageObserver.observe(img);
@@ -255,11 +409,10 @@ class AnimationManager {
 
   init() {
     this.setupScrollAnimations();
-    this.setupHoverEffects();
+    this.setupParallaxEffect();
   }
 
   setupScrollAnimations() {
-    // Intersection Observer for scroll animations
     const animationObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -271,31 +424,35 @@ class AnimationManager {
       rootMargin: '0px 0px -50px 0px'
     });
 
-    // Observe elements for animation
-    const animateElements = document.querySelectorAll('.timeline-item, .project-card, .skill-category');
+    const animateElements = document.querySelectorAll(
+      '.timeline-item, .project-card, .skill-category, .document-card, .video-card, .photo-card'
+    );
+
     animateElements.forEach(el => {
       animationObserver.observe(el);
     });
   }
 
-  setupHoverEffects() {
-    // Add subtle hover effects to cards
-    const cards = document.querySelectorAll('.project-card, .document-card, .video-card, .photo-card');
-    
-    cards.forEach(card => {
-      card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-4px)';
-      });
-      
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'translateY(0)';
-      });
-    });
+  setupParallaxEffect() {
+    const hero = document.getElementById('about');
+    if (!hero) return;
+
+    window.addEventListener('scroll', utils.throttle(() => {
+      const scrolled = window.scrollY;
+      const heroHeight = hero.offsetHeight;
+
+      if (scrolled < heroHeight) {
+        const parallaxElements = hero.querySelectorAll('.about-image');
+        parallaxElements.forEach(el => {
+          el.style.transform = `translateY(${scrolled * 0.1}px)`;
+        });
+      }
+    }, 16));
   }
 }
 
 // ========================================
-// Performance Monitor
+// Performance Monitor (Development Only)
 // ========================================
 class PerformanceMonitor {
   constructor() {
@@ -303,50 +460,69 @@ class PerformanceMonitor {
   }
 
   init() {
-    this.trackPageLoad();
-    this.trackCoreWebVitals();
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      this.trackPageLoad();
+      this.trackCoreWebVitals();
+    }
   }
 
   trackPageLoad() {
     window.addEventListener('load', () => {
-      const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
-      console.log(`Page loaded in ${loadTime}ms`);
-      
-      // Track largest contentful paint
-      if ('PerformanceObserver' in window) {
-        const observer = new PerformanceObserver((list) => {
-          const entries = list.getEntries();
-          const lastEntry = entries[entries.length - 1];
-          console.log('LCP:', lastEntry.startTime);
-        });
-        observer.observe({ entryTypes: ['largest-contentful-paint'] });
+      if (performance.timing) {
+        const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+        console.log(`Page loaded in ${loadTime}ms`);
       }
     });
   }
 
   trackCoreWebVitals() {
-    // Track First Input Delay (FID)
     if ('PerformanceObserver' in window) {
-      const fidObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        entries.forEach(entry => {
-          console.log('FID:', entry.processingStart - entry.startTime);
+      // LCP
+      try {
+        const lcpObserver = new PerformanceObserver((list) => {
+          const entries = list.getEntries();
+          const lastEntry = entries[entries.length - 1];
+          console.log('LCP:', lastEntry.startTime.toFixed(2), 'ms');
         });
-      });
-      fidObserver.observe({ entryTypes: ['first-input'] });
-    }
+        lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+      } catch (e) {
+        // LCP not supported
+      }
 
-    // Track Cumulative Layout Shift (CLS)
-    if ('PerformanceObserver' in window) {
-      const clsObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        entries.forEach(entry => {
-          if (!entry.hadRecentInput) {
-            console.log('CLS:', entry.value);
+      // FID
+      try {
+        const fidObserver = new PerformanceObserver((list) => {
+          const entries = list.getEntries();
+          entries.forEach(entry => {
+            console.log('FID:', (entry.processingStart - entry.startTime).toFixed(2), 'ms');
+          });
+        });
+        fidObserver.observe({ entryTypes: ['first-input'] });
+      } catch (e) {
+        // FID not supported
+      }
+
+      // CLS
+      try {
+        let clsValue = 0;
+        const clsObserver = new PerformanceObserver((list) => {
+          const entries = list.getEntries();
+          entries.forEach(entry => {
+            if (!entry.hadRecentInput) {
+              clsValue += entry.value;
+            }
+          });
+        });
+        clsObserver.observe({ entryTypes: ['layout-shift'] });
+
+        window.addEventListener('visibilitychange', () => {
+          if (document.visibilityState === 'hidden') {
+            console.log('CLS:', clsValue.toFixed(4));
           }
         });
-      });
-      clsObserver.observe({ entryTypes: ['layout-shift'] });
+      } catch (e) {
+        // CLS not supported
+      }
     }
   }
 }
@@ -360,25 +536,43 @@ class ErrorHandler {
   }
 
   init() {
-    // Global error handling
     window.addEventListener('error', (e) => {
       console.error('Global error:', e.error);
-      this.handleError(e.error);
     });
 
-    // Unhandled promise rejections
     window.addEventListener('unhandledrejection', (e) => {
       console.error('Unhandled promise rejection:', e.reason);
-      this.handleError(e.reason);
     });
   }
+}
 
-  handleError(error) {
-    // Log error for debugging
-    console.error('Application error:', error);
-    
-    // In production, you might want to send this to a logging service
-    // this.sendErrorToService(error);
+// ========================================
+// Smooth Reveal on Scroll
+// ========================================
+class SmoothReveal {
+  constructor() {
+    this.init();
+  }
+
+  init() {
+    // Add initial loading class to body
+    document.body.classList.add('loaded');
+
+    // Reveal sections on scroll
+    const sections = document.querySelectorAll('.section');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      revealObserver.observe(section);
+    });
   }
 }
 
@@ -392,12 +586,15 @@ class PortfolioApp {
     this.animationManager = null;
     this.performanceMonitor = null;
     this.errorHandler = null;
-    
+    this.typingEffect = null;
+    this.cursorGlow = null;
+    this.scrollToTop = null;
+    this.smoothReveal = null;
+
     this.init();
   }
 
   init() {
-    // Wait for DOM to be ready
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', () => this.initializeApp());
     } else {
@@ -409,17 +606,28 @@ class PortfolioApp {
     try {
       // Initialize error handling first
       this.errorHandler = new ErrorHandler();
-      
+
       // Initialize core managers
       this.navigationManager = new NavigationManager();
       this.contentManager = new ContentManager();
       this.animationManager = new AnimationManager();
-      
-      // Initialize performance monitoring in development
-      if (process?.env?.NODE_ENV === 'development') {
-        this.performanceMonitor = new PerformanceMonitor();
+      this.smoothReveal = new SmoothReveal();
+
+      // Initialize typing effect
+      const typingElement = document.getElementById('typing-text');
+      if (typingElement) {
+        this.typingEffect = new TypingEffect(typingElement, CONFIG.roles);
       }
-      
+
+      // Initialize cursor glow (desktop only)
+      this.cursorGlow = new CursorGlow();
+
+      // Initialize scroll to top
+      this.scrollToTop = new ScrollToTop();
+
+      // Initialize performance monitoring
+      this.performanceMonitor = new PerformanceMonitor();
+
       console.log('Portfolio application initialized successfully');
     } catch (error) {
       console.error('Failed to initialize application:', error);
@@ -435,4 +643,4 @@ const app = new PortfolioApp();
 // Export for potential use in other scripts
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { PortfolioApp, utils };
-} 
+}
