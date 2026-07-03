@@ -121,55 +121,6 @@ class TypingEffect {
 }
 
 // ========================================
-// Cursor Glow Effect
-// ========================================
-class CursorGlow {
-  constructor() {
-    this.cursor = document.getElementById('cursor-glow');
-    this.mouseX = 0;
-    this.mouseY = 0;
-    this.cursorX = 0;
-    this.cursorY = 0;
-    this.isVisible = false;
-
-    if (this.cursor && window.innerWidth > 768) {
-      this.init();
-    }
-  }
-
-  init() {
-    document.addEventListener('mousemove', (e) => {
-      this.mouseX = e.clientX;
-      this.mouseY = e.clientY;
-
-      if (!this.isVisible) {
-        this.cursor.classList.add('active');
-        this.isVisible = true;
-      }
-    });
-
-    document.addEventListener('mouseleave', () => {
-      this.cursor.classList.remove('active');
-      this.isVisible = false;
-    });
-
-    this.animate();
-  }
-
-  animate() {
-    this.cursorX = utils.lerp(this.cursorX, this.mouseX, 0.1);
-    this.cursorY = utils.lerp(this.cursorY, this.mouseY, 0.1);
-
-    if (this.cursor) {
-      this.cursor.style.left = `${this.cursorX}px`;
-      this.cursor.style.top = `${this.cursorY}px`;
-    }
-
-    requestAnimationFrame(() => this.animate());
-  }
-}
-
-// ========================================
 // Scroll to Top Button
 // ========================================
 class ScrollToTop {
@@ -587,7 +538,6 @@ class PortfolioApp {
     this.performanceMonitor = null;
     this.errorHandler = null;
     this.typingEffect = null;
-    this.cursorGlow = null;
     this.scrollToTop = null;
     this.smoothReveal = null;
 
@@ -618,9 +568,6 @@ class PortfolioApp {
       if (typingElement) {
         this.typingEffect = new TypingEffect(typingElement, CONFIG.roles);
       }
-
-      // Initialize cursor glow (desktop only)
-      this.cursorGlow = new CursorGlow();
 
       // Initialize scroll to top
       this.scrollToTop = new ScrollToTop();
