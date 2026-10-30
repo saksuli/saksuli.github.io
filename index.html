@@ -40,14 +40,7 @@
         "description": "게임 QA, 테스트 자동화, AI Agent 기반 업무 자동화",
         "url": "https://www.jongmin.kr",
         "image": "https://www.jongmin.kr/assets/img/profile-2026.jpg",
-        "email": "jongmin@jongmin.kr",
-        "telephone": "010-2646-6390",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "광명시",
-            "addressRegion": "경기도",
-            "addressCountry": "KR"
-        }
+        "email": "jongmin@jongmin.kr"
     }
     </script>
 </head>
@@ -56,11 +49,8 @@
 
     <nav class="nav" aria-label="메인 네비게이션">
         <div class="nav-inner">
-            <a href="#about" class="nav-brand">김종민</a>
-            <button class="nav-toggle" aria-label="메뉴 열기/닫기" aria-expanded="false" aria-controls="nav-menu">
-                <span></span><span></span>
-            </button>
-            <ul class="nav-menu" id="nav-menu">
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#career" class="nav-link">Career</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
@@ -76,16 +66,14 @@
                 <p class="eyebrow">Portfolio &amp; Résumé</p>
                 <h1 class="hero-name">김종민</h1>
                 <p class="hero-role">QA Engineer / Project Manager</p>
-                <p class="hero-tagline">브랜드의 가치 향상과 끊임없이 성장하는 품질 관리자</p>
+                <p class="hero-tagline">버그를 찾는 데서 끝내지 않고, 다시 생기지 않는 구조를 만듭니다</p>
 
                 <dl class="facts">
                     <div><dt>경력</dt><dd><span id="career-years">12</span>년+</dd></div>
                     <div><dt>출생</dt><dd>1989년</dd></div>
-                    <div><dt>거주</dt><dd>경기도 광명시</dd></div>
                 </dl>
 
                 <ul class="contact">
-                    <li><span class="contact-label">Tel</span><a href="tel:010-2646-6390">010-2646-6390</a></li>
                     <li><span class="contact-label">Mail</span><a href="mailto:jongmin@jongmin.kr">jongmin@jongmin.kr</a></li>
                     <li><span class="contact-label">In</span><a href="https://www.linkedin.com/in/jongmin89" target="_blank" rel="noopener noreferrer">linkedin.com/in/jongmin89</a></li>
                 </ul>
@@ -127,8 +115,8 @@
                         <h4>AI Agent 기반 자동화 개발</h4>
                         <ul>
                             <li>LLM 기반 게임 테스트 자동화 파이프라인 연구 및 개발</li>
-                            <li>비전 모델 활용 UI/게임 화면 인식 자동 검증 시스템 구축</li>
-                            <li>로컬 LLM 파인튜닝을 통한 도메인 특화 AI Agent 개발</li>
+                            <li>비전 모델 활용 UI/게임 화면 인식 자동 검증 연구</li>
+                            <li>로컬 LLM 모델 선정·양자화 평가 및 도메인 특화 활용 연구</li>
                             <li>Generative AI를 활용한 업무 프로세스 자동화</li>
                             <li>QA 문서 자동화 (기획서 → 체크리스트/TC → 결과 보고 → Jira 결함 연동)</li>
                         </ul>
@@ -345,10 +333,6 @@
                             <img src="assets/img/portfolio-2.png" alt="테스트 자동화를 위한 모바일 디바이스 환경 구성 작업 현장" loading="lazy">
                             <figcaption>테스트 자동화 디바이스 셋팅</figcaption>
                         </figure>
-                        <figure class="photo">
-                            <img src="assets/img/portfolio-3.png" alt="신입사원 오리엔테이션에서 1등을 수상한 기념 사진" loading="lazy">
-                            <figcaption>오리엔테이션 1등</figcaption>
-                        </figure>
                     </div>
                 </div>
             </div>
@@ -373,13 +357,12 @@
                 <div class="sub">
                     <h3 class="sub-title">Technical</h3>
                     <ul class="skill-list">
-                        <li><strong>프로그래밍</strong>C, Python, BASH, HTML, PHP, SQL(MySQL, MSSQL) — 기본 문법 / 시스템의 실행 흐름을 아는 수준</li>
-                        <li><strong>서버·OS</strong>리눅스(CentOS, Ubuntu), 유닉스(FreeBSD) — 간단한 웹, 파일, 데이터베이스 서비스 구축/관리 수준</li>
-                        <li><strong>가상화</strong>VMware, Hyper-V, VirtualBox, VMware vSphere 구축/관리</li>
-                        <li><strong>네트워크</strong>도메인 네임 지식 (A 레코드, CNAME, 메일서버, 웹 포워딩)</li>
-                        <li><strong>BTS</strong>Redmine, Jira 구축 및 관리</li>
-                        <li><strong>오피스</strong>Office 365 (Excel, VBA, PowerPoint, Word)</li>
-                        <li><strong>그래픽·영상</strong>Adobe Photoshop, VEGAS — 간단한 사무 업무 사용 수준</li>
+                        <li><strong>프로그래밍</strong>Python, BASH, SQL(MySQL, MSSQL), C, HTML, PHP — 테스트 자동화·업무 도구 개발</li>
+                        <li><strong>테스트 자동화</strong>Airtest·Poco SDK 기반 모바일 게임 자동화, Excel VBA 업무 자동화</li>
+                        <li><strong>서버·OS</strong>Linux(CentOS, Ubuntu), FreeBSD — 웹·파일·DB 서비스 구축 및 운영</li>
+                        <li><strong>가상화</strong>VMware vSphere, Hyper-V, VirtualBox 구축 및 관리</li>
+                        <li><strong>네트워크</strong>DNS(A 레코드, CNAME), 메일 서버, 웹 포워딩 설정</li>
+                        <li><strong>이슈 트래킹</strong>Jira, Redmine 구축 및 운영</li>
                     </ul>
                 </div>
             </div>
