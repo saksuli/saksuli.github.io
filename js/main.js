@@ -28,23 +28,10 @@ function initCareerYears() {
 
 function initNav() {
   const nav = document.querySelector('.nav');
-  const toggle = document.querySelector('.nav-toggle');
-  const menu = document.getElementById('nav-menu');
   const links = [...document.querySelectorAll('.nav-link')];
   const sections = links
     .map(link => document.querySelector(link.getAttribute('href')))
     .filter(Boolean);
-
-  const setOpen = open => {
-    menu.classList.toggle('active', open);
-    toggle.classList.toggle('active', open);
-    toggle.setAttribute('aria-expanded', String(open));
-  };
-
-  toggle.addEventListener('click', () => setOpen(!menu.classList.contains('active')));
-  links.forEach(link => link.addEventListener('click', () => setOpen(false)));
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
-  document.addEventListener('click', e => { if (!nav.contains(e.target)) setOpen(false); });
 
   const update = () => {
     nav.classList.toggle('scrolled', window.scrollY > 8);

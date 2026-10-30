@@ -87,49 +87,25 @@ img { max-width: 100%; display: block; }
   padding: 0 24px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
-.nav-brand {
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: 17px;
-  text-decoration: none;
+.nav-menu {
+  display: flex;
+  gap: 28px;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
-
-.nav-menu { display: flex; gap: 28px; }
+.nav-menu::-webkit-scrollbar { display: none; }
 
 .nav-link {
   font-size: 14px;
   color: var(--muted);
   text-decoration: none;
   letter-spacing: .02em;
+  white-space: nowrap;
 }
 .nav-link:hover, .nav-link.active { color: var(--ink); }
 .nav-link.active { text-decoration: underline; text-decoration-color: var(--ink); }
-
-.nav-toggle {
-  display: none;
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  border: 0;
-  background: none;
-  cursor: pointer;
-  position: relative;
-}
-.nav-toggle span {
-  position: absolute;
-  left: 6px;
-  right: 6px;
-  height: 1.5px;
-  background: var(--ink);
-  transition: transform .2s;
-}
-.nav-toggle span:first-child { top: 12px; }
-.nav-toggle span:last-child { top: 19px; }
-.nav-toggle.active span:first-child { transform: translateY(3.5px) rotate(45deg); }
-.nav-toggle.active span:last-child { transform: translateY(-3.5px) rotate(-45deg); }
 
 /* ---------- Page ---------- */
 .page {
@@ -172,8 +148,9 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-tagline {
-  margin-top: 4px;
-  color: var(--muted);
+  margin-top: 6px;
+  font-size: 17px;
+  color: var(--ink-2);
 }
 
 .facts {
@@ -422,21 +399,7 @@ figcaption { margin-top: 8px; font-size: 13px; color: var(--ink-2); }
 /* ---------- Responsive ---------- */
 @media (max-width: 760px) {
   .nav-inner, .page { padding: 0 16px; }
-  .nav-toggle { display: block; }
-  .nav-menu {
-    position: absolute;
-    top: var(--nav-h);
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    gap: 0;
-    padding: 8px 16px 16px;
-    background: var(--paper);
-    border-bottom: 1px solid var(--rule);
-    display: none;
-  }
-  .nav-menu.active { display: flex; }
-  .nav-link { display: block; padding: 10px 0; font-size: 15px; }
+  .nav-menu { gap: 20px; }
 
   .hero { flex-direction: column-reverse; gap: 28px; padding: 40px 0; }
   .portrait { width: 112px; height: 140px; }
