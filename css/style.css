@@ -381,11 +381,11 @@ figcaption { margin-top: 8px; font-size: 13px; color: var(--ink-2); }
 
 /* ---------- Skills ---------- */
 .skill-list { display: grid; gap: 10px; }
-.skill-list li { padding-left: 0; }
+.lead { margin-bottom: 16px; font-size: 15px; font-weight: 500; }
+.tools { margin-top: 16px; font-size: 13px; color: var(--muted); letter-spacing: .02em; }
+.skill-list li { padding-left: 0; display: grid; grid-template-columns: 124px 1fr; gap: 12px; }
 .skill-list strong {
   display: inline-block;
-  min-width: 96px;
-  margin-right: 12px;
   color: var(--ink);
   font-size: 14px;
 }
@@ -451,7 +451,7 @@ figcaption { margin-top: 8px; font-size: 13px; color: var(--ink-2); }
 
   .video-grid, .photo-grid { grid-template-columns: 1fr; }
 
-  .skill-list strong { display: block; }
+  .skill-list li { grid-template-columns: 1fr; gap: 0; }
   .footer { padding: 24px 16px 48px; }
 }
 
