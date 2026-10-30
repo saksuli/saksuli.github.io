@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>김종민 - QA Engineer 포트폴리오</title>
+    <title>김종민 - QA Engineer / Project Manager</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="김종민 QA Engineer 포트폴리오 - 게임 및 소프트웨어 품질보증, 테스트 자동화 전문가. 스마일게이트, 넷마블 경력 11년">
-    <meta name="keywords" content="QA Engineer, 품질보증, 테스트 자동화, 게임 QA, 김종민, 포트폴리오">
+    <meta name="description" content="김종민 QA Engineer / Project Manager 포트폴리오 - 게임 QA, 테스트 자동화, AI Agent 기반 업무 자동화. 넷마블, 스마일게이트, OmniCraft Labs">
+    <meta name="keywords" content="QA Engineer, Project Manager, 품질보증, 테스트 자동화, 게임 QA, 김종민, 포트폴리오">
     <meta name="author" content="김종민">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#000000">
+    <meta name="theme-color" content="#fbfaf7">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.jongmin.kr/">
-    <meta property="og:title" content="김종민 - QA Engineer 포트폴리오">
-    <meta property="og:description" content="게임 및 소프트웨어 품질보증, 테스트 자동화 전문가">
+    <meta property="og:title" content="김종민 - QA Engineer / Project Manager">
+    <meta property="og:description" content="게임 QA, 테스트 자동화, AI Agent 기반 업무 자동화">
     <meta property="og:image" content="https://www.jongmin.kr/assets/img/new_profile.jpg">
 
     <!-- Favicon -->
@@ -25,13 +25,10 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/modern-styles.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -39,8 +36,8 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "김종민",
-        "jobTitle": "QA Engineer",
-        "description": "게임 및 소프트웨어 품질보증, 테스트 자동화 전문가",
+        "jobTitle": "QA Engineer / Project Manager",
+        "description": "게임 QA, 테스트 자동화, AI Agent 기반 업무 자동화",
         "url": "https://www.jongmin.kr",
         "image": "https://www.jongmin.kr/assets/img/new_profile.jpg",
         "email": "jongmin@jongmin.kr",
@@ -55,411 +52,346 @@
     </script>
 </head>
 <body>
-    <!-- Skip to content for accessibility -->
     <a href="#main-content" class="skip-link">메인 콘텐츠로 바로가기</a>
 
-    <!-- Navigation -->
-    <nav class="nav" role="navigation" aria-label="메인 네비게이션">
-        <div class="nav-container">
-            <button class="nav-toggle" aria-label="메뉴 열기/닫기">
-                <span></span>
-                <span></span>
-                <span></span>
+    <nav class="nav" aria-label="메인 네비게이션">
+        <div class="nav-inner">
+            <a href="#about" class="nav-brand">김종민</a>
+            <button class="nav-toggle" aria-label="메뉴 열기/닫기" aria-expanded="false" aria-controls="nav-menu">
+                <span></span><span></span>
             </button>
-
-            <ul class="nav-menu">
-                <li><a href="#about" class="nav-link">About</a></li>
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="#career" class="nav-link">Career</a></li>
-                <li><a href="#experience" class="nav-link">Projects</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main id="main-content" class="main">
-        <!-- Hero / About Section -->
-        <section id="about" class="section section--light">
-            <div class="container">
-                <div class="about-content">
-                    <div class="about-text">
-                        <p class="about-subtitle">브랜드의 가치 향상과 끊임없이 성장하는 품질 관리자</p>
-                        <h1 class="about-title">김종민</h1>
-                        <div class="about-contact">
-                            <p><i class="fas fa-phone"></i> 010-2646-6390</p>
-                            <p><i class="fas fa-envelope"></i> <a href="mailto:jongmin@jongmin.kr">jongmin@jongmin.kr</a></p>
-                        </div>
-                        <p class="about-role">
-                            <span class="typing-role" id="typing-text"></span>
-                        </p>
-                        <div class="about-stats">
-                            <div class="stat">
-                                <span class="stat-number" id="career-years">11+</span>
-                                <span class="stat-label">Years Experience</span>
-                            </div>
-                            <div class="stat">
-                                <span class="stat-number" id="current-age">36</span>
-                                <span class="stat-label">Years Old</span>
-                            </div>
-                        </div>
-                        <div class="social-links">
-                            <a href="https://www.linkedin.com/in/jongmin89" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="mailto:jongmin@jongmin.kr" class="social-link" aria-label="Email">
-                                <i class="fas fa-envelope"></i>
-                            </a>
-                        </div>
+    <main id="main-content" class="page">
+        <!-- About -->
+        <header id="about" class="hero">
+            <div class="hero-text">
+                <p class="eyebrow">Portfolio &amp; Résumé</p>
+                <h1 class="hero-name">김종민</h1>
+                <p class="hero-role">QA Engineer / Project Manager</p>
+                <p class="hero-tagline">브랜드의 가치 향상과 끊임없이 성장하는 품질 관리자</p>
+
+                <dl class="facts">
+                    <div><dt>경력</dt><dd><span id="career-years">12</span>년+</dd></div>
+                    <div><dt>출생</dt><dd>1989년</dd></div>
+                    <div><dt>거주</dt><dd>경기도 광명시</dd></div>
+                </dl>
+
+                <ul class="contact">
+                    <li><span class="contact-label">Tel</span><a href="tel:010-2646-6390">010-2646-6390</a></li>
+                    <li><span class="contact-label">Mail</span><a href="mailto:jongmin@jongmin.kr">jongmin@jongmin.kr</a></li>
+                    <li><span class="contact-label">In</span><a href="https://www.linkedin.com/in/jongmin89" target="_blank" rel="noopener noreferrer">linkedin.com/in/jongmin89</a></li>
+                </ul>
+
+                <button type="button" class="print-btn" id="print-btn">PDF로 저장 / 인쇄</button>
+            </div>
+            <img src="assets/img/new_profile.jpg" alt="김종민 프로필 사진" class="portrait" width="200" height="250">
+        </header>
+
+        <!-- Career -->
+        <section id="career" class="section">
+            <h2 class="section-label">Career</h2>
+            <div class="section-body">
+                <article class="entry">
+                    <header class="entry-head">
+                        <h3>OmniCraft Labs</h3>
+                        <span class="entry-date">2025.04 — 현재</span>
+                    </header>
+                    <p class="entry-role">QA Engineer / Project Manager</p>
+
+                    <div class="group">
+                        <h4>Project Manager</h4>
+                        <ul>
+                            <li>기획팀 일정/일감/커뮤니케이션 관리</li>
+                            <li>업무 편의성을 위한 LLM 봇, 툴 개발 및 운영 관리</li>
+                            <li>마일스톤 결과 보고 체계 운영</li>
+                        </ul>
                     </div>
-                    <div class="about-image">
-                        <img src="assets/img/new_profile.jpg" alt="김종민 프로필 사진" class="profile-img">
+                    <div class="group">
+                        <h4>테스트 품질 관리</h4>
+                        <ul>
+                            <li>테스트 품질 체계화 및 운영 정책 수립</li>
+                            <li>요구사항 기반 테스트 전략 설계 및 커버리지 관리</li>
+                            <li>마일스톤별 기능 체크리스트·테스트 케이스 설계</li>
+                            <li>사용자·개발자·QA 3관점 기획서 리뷰를 통한 개발 전 명세 공백 도출</li>
+                        </ul>
                     </div>
-                </div>
+                    <div class="group">
+                        <h4>AI Agent 기반 자동화 개발</h4>
+                        <ul>
+                            <li>LLM 기반 게임 테스트 자동화 파이프라인 연구 및 개발</li>
+                            <li>비전 모델 활용 UI/게임 화면 인식 자동 검증 시스템 구축</li>
+                            <li>로컬 LLM 파인튜닝을 통한 도메인 특화 AI Agent 개발</li>
+                            <li>Generative AI를 활용한 업무 프로세스 자동화</li>
+                            <li>QA 문서 자동화 (기획서 → 체크리스트/TC → 결과 보고 → Jira 결함 연동)</li>
+                        </ul>
+                    </div>
+                    <div class="group">
+                        <h4>테스트 인프라 구축</h4>
+                        <ul>
+                            <li>Android 디바이스 팜(GADS/STF) 및 iOS OTA 배포 시스템 구축</li>
+                            <li>멀티 디바이스 Airtest 자동화 플랫폼 및 강화학습 기반 FPS 탐색 봇 개발</li>
+                        </ul>
+                    </div>
+                    <div class="group">
+                        <h4>크로스팀 협업</h4>
+                        <ul>
+                            <li>아트팀 에셋 검수 및 기획팀 콘텐츠 검증 서포트</li>
+                            <li>AI 이미지 생성 도구 활용 프로토타이핑 지원</li>
+                            <li>클라이언트 개발 문서 / 개발 치트 AI 분석을 통한 자동화</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="entry">
+                    <header class="entry-head">
+                        <h3>스마일게이트엔터테인먼트</h3>
+                        <span class="entry-date">2023.07 — 2024.11</span>
+                    </header>
+                    <p class="entry-role">기술전략담당 · 품질검증팀</p>
+
+                    <div class="group">
+                        <h4>주요 성과</h4>
+                        <ul>
+                            <li>신규 2개 프로젝트 테스트 자동화 적용, 빌드 안정성 확보</li>
+                            <li>차세대 테스트 자동화 시스템 기획 및 개발 주도</li>
+                        </ul>
+                    </div>
+                    <div class="group">
+                        <h4>품질 관리</h4>
+                        <ul>
+                            <li>테스트 품질 체계화 및 운영 정책 수립</li>
+                            <li>요구사항 기반 테스트 설계 및 커버리지 관리</li>
+                            <li>이슈 트래킹 및 결함 관리 프로세스 운영</li>
+                            <li>테스트 환경 및 디바이스 인프라 관리</li>
+                        </ul>
+                    </div>
+                    <div class="group">
+                        <h4>자동화 R&amp;D</h4>
+                        <ul>
+                            <li>Airtest, Poco SDK, Python 기반 테스트 자동화 개발</li>
+                            <li>Unreal Engine 5 성능 QA 자동화 (FPS 모니터링)</li>
+                            <li>JIRA VBA 연동 업무 자동화 도구 개발</li>
+                            <li>SonicCloudOrg 기반 클라우드 테스트 자동화 시스템 설계</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="entry">
+                    <header class="entry-head">
+                        <h3>넷마블몬스터 <span class="entry-note">前 씨드나인게임즈</span></h3>
+                        <span class="entry-date">2013.12 — 2023.07</span>
+                    </header>
+                    <p class="entry-role">QA Engineer</p>
+
+                    <div class="group">
+                        <h4>주요 성과</h4>
+                        <ul>
+                            <li>BVT 체크 항목 70% 자동화 달성, 테스트 시간 60% 단축</li>
+                            <li>확률성 뽑기 n만 회 시뮬레이션 자동화 검증 시스템 도입</li>
+                            <li>자동화 SDK 활용 사례 사내 발표</li>
+                        </ul>
+                    </div>
+                    <div class="group">
+                        <h4>담당 업무</h4>
+                        <ul>
+                            <li>주요 프로젝트 초기 개발 단계부터 QA 투입 및 런칭 지원</li>
+                            <li>QA 계획 수립, 테스트 설계 및 커버리지 관리</li>
+                            <li>이슈 트래킹 및 결함 관리 프로세스 운영</li>
+                            <li>스토어 심사 대응 (Google, Apple, Kakao)</li>
+                            <li>신입 QA 교육 및 온보딩 지원</li>
+                        </ul>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <!-- Career Section -->
-        <section id="career" class="section section--parchment">
-            <div class="container">
-                <h2 class="section-title" data-text="CAREER"><span>Career</span></h2>
-                <div class="timeline">
-                    <!-- OmniCraft Labs -->
-                    <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <i class="fas fa-building"></i>
+        <!-- Projects -->
+        <section id="projects" class="section">
+            <h2 class="section-label">Projects</h2>
+            <div class="section-body">
+                <ul class="project-list">
+                    <li class="project">
+                        <img src="assets/img/raven2-icon.png" alt="" class="project-icon" width="40" height="40">
+                        <div class="project-main">
+                            <h3>레이븐2 <span class="project-genre">MMORPG, 리니지라이크</span></h3>
+                            <p>초기 개발 참여</p>
                         </div>
-                        <div class="timeline-content company-omni">
-                            <h3>
-                                <span class="company-text">OmniCraft Labs</span>
-                            </h3>
-                            <p class="timeline-subtitle">QA Engineer</p>
-                            <p class="timeline-date">2025.04 ~</p>
-
-                            <h4 class="career-category"><i class="fas fa-check"></i> 테스트 품질 관리</h4>
-                            <ul class="timeline-list">
-                                <li>테스트 품질 체계화 및 운영 정책 수립</li>
-                                <li>요구사항 기반 테스트 전략 설계 및 커버리지 관리</li>
-                            </ul>
-
-                            <h4 class="career-category"><i class="fas fa-check"></i> AI Agent 기반 자동화 개발</h4>
-                            <ul class="timeline-list">
-                                <li>LLM 기반 게임 테스트 자동화 파이프라인 연구 및 개발</li>
-                                <li>비전 모델 활용 UI/게임 화면 인식 자동 검증 시스템 구축</li>
-                                <li>로컬 LLM 파인튜닝을 통한 도메인 특화 AI Agent 개발</li>
-                                <li>Generative AI를 활용한 업무 프로세스 자동화</li>
-                            </ul>
-
-                            <h4 class="career-category"><i class="fas fa-check"></i> 크로스팀 협업</h4>
-                            <ul class="timeline-list">
-                                <li>아트팀 에셋 검수 및 기획팀 콘텐츠 검증 서포트</li>
-                                <li>AI 이미지 생성 도구 활용 프로토타이핑 지원</li>
-                            </ul>
+                        <span class="project-date">2021 — 2023</span>
+                    </li>
+                    <li class="project">
+                        <img src="assets/img/mff-icon.png" alt="" class="project-icon" width="40" height="40">
+                        <div class="project-main">
+                            <h3>마블 퓨처파이트 <span class="project-genre">MARVEL IP · 액션 전략 RPG</span></h3>
+                            <p>글로벌 &amp; 중국 프로토타입 개발 및 런칭 ~ 라이브 QA</p>
                         </div>
-                    </div>
-
-                    <!-- 스마일게이트엔터테인먼트 -->
-                    <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <i class="fas fa-building"></i>
+                        <span class="project-date">2014 — 2021</span>
+                    </li>
+                    <li class="project">
+                        <img src="assets/img/mfr-icon.png" alt="" class="project-icon" width="40" height="40">
+                        <div class="project-main">
+                            <h3>마블 퓨처 레볼루션 <span class="project-genre">MARVEL IP · MMORPG</span></h3>
+                            <p>초기 개발 참여</p>
                         </div>
-                        <div class="timeline-content company-smilegate">
-                            <h3>
-                                <span class="company-text">스마일게이트엔터테인먼트</span>
-                            </h3>
-                            <p class="timeline-subtitle">기술전략담당 - 품질검증팀</p>
-                            <p class="timeline-date">2023.07.17 - 2024.11.22</p>
-
-                            <h4 class="career-category"><i class="fas fa-check"></i> 주요 성과</h4>
-                            <ul class="timeline-list">
-                                <li>신규 2개 프로젝트 테스트 자동화 적용, 빌드 안정성 확보</li>
-                                <li>차세대 테스트 자동화 시스템 기획 및 개발 주도</li>
-                            </ul>
-
-                            <h4 class="career-category"><i class="fas fa-check"></i> 품질 관리</h4>
-                            <ul class="timeline-list">
-                                <li>테스트 품질 체계화 및 운영 정책 수립</li>
-                                <li>요구사항 기반 테스트 설계 및 커버리지 관리</li>
-                                <li>이슈 트래킹 및 결함 관리 프로세스 운영</li>
-                                <li>테스트 환경 및 디바이스 인프라 관리</li>
-                            </ul>
-
-                            <h4 class="career-category"><i class="fas fa-check"></i> 자동화 R&D</h4>
-                            <ul class="timeline-list">
-                                <li>Airtest, Poco SDK, Python 기반 테스트 자동화 개발</li>
-                                <li>Unreal Engine 5 성능 QA 자동화 (FPS 모니터링)</li>
-                                <li>JIRA VBA 연동 업무 자동화 도구 개발</li>
-                                <li>SonicCloudOrg 기반 클라우드 테스트 자동화 시스템 설계</li>
-                            </ul>
+                        <span class="project-date">2020 — 2021</span>
+                    </li>
+                    <li class="project">
+                        <img src="assets/img/mako-icon.png" alt="" class="project-icon" width="40" height="40">
+                        <div class="project-main">
+                            <h3>마계촌 온라인 <span class="project-genre">PC · CAPCOM IP · 횡스크롤 액션 MORPG</span></h3>
+                            <p>중국 알파 개발 및 런칭 ~ 라이브 QA 진행</p>
                         </div>
-                    </div>
-
-                    <!-- 넷마블몬스터 -->
-                    <div class="timeline-item">
-                        <div class="timeline-marker">
-                            <i class="fas fa-building"></i>
+                        <span class="project-date">2014 — 2015</span>
+                    </li>
+                    <li class="project">
+                        <img src="assets/img/monster-icon.png" alt="" class="project-icon" width="40" height="40">
+                        <div class="project-main">
+                            <h3>몬스터 길들이기 <span class="project-genre">액션 RPG</span></h3>
+                            <p>한국, 중국, 대만 라이브 QA 진행</p>
                         </div>
-                        <div class="timeline-content company-monster">
-                            <h3>
-                                <span class="company-text">넷마블몬스터<span class="company-note">(前 씨드나인게임즈)</span></span>
-                            </h3>
-                            <p class="timeline-subtitle">QA Engineer</p>
-                            <p class="timeline-date">2013.12.30 - 2023.07.11</p>
-
-                            <h4 class="career-category"><i class="fas fa-check"></i> 주요 성과</h4>
-                            <ul class="timeline-list">
-                                <li>BVT 체크 항목 70% 자동화 달성, 테스트 시간 60% 단축</li>
-                                <li>확률성 뽑기 n만 회 시뮬레이션 자동화 검증 시스템 도입</li>
-                                <li>자동화 SDK 활용 사례 사내 발표</li>
-                            </ul>
-
-                            <h4 class="career-category"><i class="fas fa-check"></i> 담당 업무</h4>
-                            <ul class="timeline-list">
-                                <li>주요 프로젝트 초기 개발 단계부터 QA 투입 및 런칭 지원</li>
-                                <li>QA 계획 수립, 테스트 설계 및 커버리지 관리</li>
-                                <li>이슈 트래킹 및 결함 관리 프로세스 운영</li>
-                                <li>스토어 심사 대응 (Google, Apple, Kakao)</li>
-                                <li>신입 QA 교육 및 온보딩 지원</li>
-                            </ul>
+                        <span class="project-date">2014</span>
+                    </li>
+                    <li class="project">
+                        <img src="assets/img/pongpong-icon.png" alt="" class="project-icon" width="40" height="40">
+                        <div class="project-main">
+                            <h3>다함께 퐁퐁퐁 <span class="project-genre">캐주얼 미니게임</span></h3>
+                            <p>한국, 일본 라이브 QA 진행</p>
                         </div>
-                    </div>
-                </div>
+                        <span class="project-date">2014</span>
+                    </li>
+                    <li class="project">
+                        <img src="assets/img/r2beat-icon.png" alt="" class="project-icon" width="40" height="40">
+                        <div class="project-main">
+                            <h3>알투비트 온라인 <span class="project-genre">PC · 리듬 게임</span></h3>
+                            <p>중국 라이브 QA 진행</p>
+                        </div>
+                        <span class="project-date">2014</span>
+                    </li>
+                </ul>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="experience" class="section section--dark">
-            <div class="container">
-                <h2 class="section-title" data-text="PROJECTS"><span>Projects</span></h2>
-                <div class="project-grid">
-                    <div class="project-card">
-                        <div class="project-header">
-                            <img src="assets/img/raven2-icon.png" alt="Raven 2" class="project-icon">
-                            <div class="project-info">
-                                <h3>레이븐2</h3>
-                                <span class="project-genre">MMORPG, 리니지라이크</span>
-                            </div>
-                            <span class="project-date">2021 - 2023</span>
-                        </div>
-                        <p class="project-description">초기 개발 참여</p>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <img src="assets/img/mff-icon.png" alt="Marvel Future Fight" class="project-icon">
-                            <div class="project-info">
-                                <h3>마블 퓨처파이트</h3>
-                                <span class="project-genre">MARVEL IP · 액션 전략 RPG</span>
-                            </div>
-                            <span class="project-date">2014 - 2021</span>
-                        </div>
-                        <p class="project-description">글로벌 & 중국 프로토타입 개발 및 런칭 ~ 라이브 QA</p>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <img src="assets/img/mfr-icon.png" alt="Marvel Future Revolution" class="project-icon">
-                            <div class="project-info">
-                                <h3>마블 퓨처 레볼루션</h3>
-                                <span class="project-genre">MARVEL IP · MMORPG</span>
-                            </div>
-                            <span class="project-date">2020 - 2021</span>
-                        </div>
-                        <p class="project-description">초기 개발 참여</p>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <img src="assets/img/mako-icon.png" alt="마계촌 온라인" class="project-icon">
-                            <div class="project-info">
-                                <h3>마계촌 온라인</h3>
-                                <span class="project-genre">PC · CAPCOM IP · 횡스크롤 액션 MORPG</span>
-                            </div>
-                            <span class="project-date">2014 - 2015</span>
-                        </div>
-                        <p class="project-description">중국 알파 개발 및 런칭 ~ 라이브 QA 진행</p>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <img src="assets/img/monster-icon.png" alt="몬스터 길들이기" class="project-icon">
-                            <div class="project-info">
-                                <h3>몬스터 길들이기</h3>
-                                <span class="project-genre">액션 RPG</span>
-                            </div>
-                            <span class="project-date">2014</span>
-                        </div>
-                        <p class="project-description">한국, 중국, 대만 라이브 QA 진행</p>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <img src="assets/img/pongpong-icon.png" alt="다함께 퐁퐁퐁" class="project-icon">
-                            <div class="project-info">
-                                <h3>다함께 퐁퐁퐁</h3>
-                                <span class="project-genre">캐주얼 미니게임</span>
-                            </div>
-                            <span class="project-date">2014</span>
-                        </div>
-                        <p class="project-description">한국, 일본 라이브 QA 진행</p>
-                    </div>
-
-                    <div class="project-card">
-                        <div class="project-header">
-                            <img src="assets/img/r2beat-icon.png" alt="알투비트 온라인" class="project-icon">
-                            <div class="project-info">
-                                <h3>알투비트 온라인</h3>
-                                <span class="project-genre">PC · 리듬 게임</span>
-                            </div>
-                            <span class="project-date">2014</span>
-                        </div>
-                        <p class="project-description">중국 라이브 QA 진행</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="section section--light">
-            <div class="container">
-                <h2 class="section-title" data-text="PORTFOLIO"><span>Portfolio</span></h2>
-
-                <div class="portfolio-category">
-                    <h3 class="category-title">Documents</h3>
-                    <div class="document-grid">
-                        <a href="assets/docs/포트폴리오_업무 R&R 및 QA 프로세스_김종민.pdf" download class="document-card">
-                            <i class="fas fa-file-powerpoint"></i>
-                            <span>업무 R&R 및 QA 프로세스 문서</span>
-                        </a>
-                        <a href="assets/docs/포트폴리오_QA 치트 기획_김종민.pdf" download class="document-card">
-                            <i class="fas fa-file-powerpoint"></i>
-                            <span>QA 치트 기획 문서</span>
-                        </a>
-                        <a href="assets/docs/포트폴리오_도전과제 TC_김종민.xlsx" download class="document-card">
-                            <i class="fas fa-file-excel"></i>
-                            <span>도전과제 테스트 케이스 문서</span>
-                        </a>
-                    </div>
-                    <div class="portfolio-note">
-                        <i class="fas fa-info-circle"></i>
-                        해당 실제 업무에 사용된 파일이 아닌 재가공된 파일입니다.
-                    </div>
+        <!-- Portfolio -->
+        <section id="portfolio" class="section">
+            <h2 class="section-label">Portfolio</h2>
+            <div class="section-body">
+                <div class="sub">
+                    <h3 class="sub-title">Documents</h3>
+                    <ul class="doc-list">
+                        <li><a href="assets/docs/포트폴리오_업무 R&amp;R 및 QA 프로세스_김종민.pdf" download>
+                            <span class="doc-type">PDF</span><span class="doc-name">업무 R&amp;R 및 QA 프로세스 문서</span><span class="doc-arrow" aria-hidden="true">↓</span>
+                        </a></li>
+                        <li><a href="assets/docs/포트폴리오_QA 치트 기획_김종민.pdf" download>
+                            <span class="doc-type">PDF</span><span class="doc-name">QA 치트 기획 문서</span><span class="doc-arrow" aria-hidden="true">↓</span>
+                        </a></li>
+                        <li><a href="assets/docs/포트폴리오_도전과제 TC_김종민.xlsx" download>
+                            <span class="doc-type">XLSX</span><span class="doc-name">도전과제 테스트 케이스 문서</span><span class="doc-arrow" aria-hidden="true">↓</span>
+                        </a></li>
+                    </ul>
+                    <p class="note">실제 업무에 사용된 파일이 아닌 재가공된 파일입니다.</p>
                 </div>
 
-                <div class="portfolio-category">
-                    <h3 class="category-title">Videos</h3>
+                <div class="sub screen-only">
+                    <h3 class="sub-title">Videos</h3>
                     <div class="video-grid">
-                        <div class="video-card">
-                            <h4>AIRTEST+POCO 테스트 자동화</h4>
-                            <div class="video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/D7-Jak2unEk?si=p2S463VIsLrvThc8"
-                                        title="AIRTEST+POCO 테스트 자동화"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        allowfullscreen
-                                        loading="lazy"></iframe>
+                        <figure class="video">
+                            <div class="video-frame">
+                                <iframe src="https://www.youtube.com/embed/D7-Jak2unEk?si=p2S463VIsLrvThc8" title="AIRTEST+POCO 테스트 자동화" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                             </div>
-                        </div>
-                        <div class="video-card">
-                            <h4>VBA 업무 Bug Fixed 자동화</h4>
-                            <div class="video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/rB2ncYlB7xc?si=hfCvWgEGY6I9Q1J7"
-                                        title="VBA 업무 Bug Fixed 자동화"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        allowfullscreen
-                                        loading="lazy"></iframe>
+                            <figcaption>AIRTEST+POCO 테스트 자동화</figcaption>
+                        </figure>
+                        <figure class="video">
+                            <div class="video-frame">
+                                <iframe src="https://www.youtube.com/embed/rB2ncYlB7xc?si=hfCvWgEGY6I9Q1J7" title="VBA 업무 Bug Fixed 자동화" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                             </div>
-                        </div>
-                        <div class="video-card">
-                            <h4>VBA 업무 이슈 리포트 정리 자동화</h4>
-                            <div class="video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/IrixvG98SX4?si=hh4Z_Ad-eTKnqaGP"
-                                        title="VBA 업무 이슈 리포트 정리 자동화"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        allowfullscreen
-                                        loading="lazy"></iframe>
+                            <figcaption>VBA 업무 Bug Fixed 자동화</figcaption>
+                        </figure>
+                        <figure class="video">
+                            <div class="video-frame">
+                                <iframe src="https://www.youtube.com/embed/IrixvG98SX4?si=hh4Z_Ad-eTKnqaGP" title="VBA 업무 이슈 리포트 정리 자동화" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                             </div>
-                        </div>
-                        <div class="video-card">
-                            <h4>배치 파일을 활용한 업무 자동화</h4>
-                            <div class="video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/BpW3Nuzgavw?si=JTbEqwSzO9czDO5W"
-                                        title="배치 파일을 활용한 업무 자동화"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        allowfullscreen
-                                        loading="lazy"></iframe>
+                            <figcaption>VBA 업무 이슈 리포트 정리 자동화</figcaption>
+                        </figure>
+                        <figure class="video">
+                            <div class="video-frame">
+                                <iframe src="https://www.youtube.com/embed/BpW3Nuzgavw?si=JTbEqwSzO9czDO5W" title="배치 파일을 활용한 업무 자동화" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                             </div>
-                        </div>
-                        <div class="video-card">
-                            <h4>간단한 툴 제작</h4>
-                            <div class="video-wrapper">
-                                <iframe src="https://www.youtube.com/embed/ryUx9pAfH1A?si=8JLc3OM2SWHmjLKC"
-                                        title="간단한 툴 제작"
-                                        frameborder="0"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        allowfullscreen
-                                        loading="lazy"></iframe>
+                            <figcaption>배치 파일을 활용한 업무 자동화</figcaption>
+                        </figure>
+                        <figure class="video">
+                            <div class="video-frame">
+                                <iframe src="https://www.youtube.com/embed/ryUx9pAfH1A?si=8JLc3OM2SWHmjLKC" title="간단한 툴 제작" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                             </div>
-                        </div>
+                            <figcaption>간단한 툴 제작</figcaption>
+                        </figure>
                     </div>
                 </div>
 
-                <div class="portfolio-category">
-                    <h3 class="category-title">Photos</h3>
+                <div class="sub screen-only">
+                    <h3 class="sub-title">Photos</h3>
                     <div class="photo-grid">
-                        <div class="photo-card">
-                            <h4>사내 테스트 자동화 발표</h4>
-                            <img src="assets/img/portfolio-1.png" alt="김종민이 사내에서 테스트 자동화 방법론에 대해 발표하는 모습" loading="lazy">
-                        </div>
-                        <div class="photo-card">
-                            <h4>테스트 자동화 디바이스 셋팅</h4>
+                        <figure class="photo">
+                            <img src="assets/img/portfolio-1.png" alt="사내에서 테스트 자동화 방법론에 대해 발표하는 모습" loading="lazy">
+                            <figcaption>사내 테스트 자동화 발표</figcaption>
+                        </figure>
+                        <figure class="photo">
                             <img src="assets/img/portfolio-2.png" alt="테스트 자동화를 위한 모바일 디바이스 환경 구성 작업 현장" loading="lazy">
-                        </div>
-                        <div class="photo-card">
-                            <h4>오리엔테이션 1등</h4>
+                            <figcaption>테스트 자동화 디바이스 셋팅</figcaption>
+                        </figure>
+                        <figure class="photo">
                             <img src="assets/img/portfolio-3.png" alt="신입사원 오리엔테이션에서 1등을 수상한 기념 사진" loading="lazy">
-                        </div>
+                            <figcaption>오리엔테이션 1등</figcaption>
+                        </figure>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section section--parchment">
-            <div class="container">
-                <h2 class="section-title" data-text="SKILLS"><span>Skills</span></h2>
-                <div class="skills-content">
-                    <div class="skills-text">
-                        <h3>자격증</h3>
-                        <p>ITQ 아래 한글</p>
-                        <p>ITQ 한글파워포인트</p>
+        <!-- Skills -->
+        <section id="skills" class="section">
+            <h2 class="section-label">Skills</h2>
+            <div class="section-body">
+                <div class="sub">
+                    <h3 class="sub-title">AI Enablement</h3>
+                    <p class="lead">생성형 AI를 QA 업무 프로세스에 내재화하고, AI 출력의 신뢰성을 통제하는 검증 체계와 운영 거버넌스를 설계해 팀 단위로 운영합니다.</p>
+                    <ul class="skill-list">
+                        <li><strong>워크플로 설계</strong>요구사항 문서 → 체크리스트·TC → 결과 리포트 → Jira 결함 트래킹으로 이어지는 End-to-End 문서 파이프라인을 Claude Skill·MCP 기반으로 구축</li>
+                        <li><strong>신뢰성 거버넌스</strong>Source of Truth 우선순위와 충돌 라벨링, 미확정 수치 생성 차단, 변경률 리포팅, 게시 전 Human-in-the-Loop 승인 게이트로 Hallucination 리스크 통제</li>
+                        <li><strong>피드백 루프</strong>실제 오류 사례를 원인 분석해 지침 버전 관리(v10)와 스킬 규칙에 반영하는 지속적 개선 사이클 운영</li>
+                        <li><strong>비용 효율 설계</strong>작업 난이도별 모델 티어링(Opus · Sonnet · Haiku) 전략과 토큰 비용 기반 데이터 수집 주기 설계</li>
+                    </ul>
+                    <p class="tools">Multi-LLM 운용 — Claude · Claude Code · Codex · ChatGPT · Gemini · 로컬 LLM</p>
+                </div>
 
-                        <h3>언어</h3>
-                        <p>일본어 (여행에서 간단히 사용, 드라마/애니메이션 자막 보지 않는 수준)</p>
-
-                        <h3>기술</h3>
-                        <p>C, Python, BASH, HTML, PHP, SQL(Mysql, MSSQL) - 기본 문법 / 시스템의 실행 흐름을 아는 수준</p>
-                        <p>리눅스(CentOS, Ubuntu), 유닉스 (Freebsd) - 간단한 서비스 웹, 파일, 데이터베이스 구축/관리 수준</p>
-                        <p>가상 윈도우(Vmware, Hyper-V, VirtualBox), Vmware Vsphere 구축/관리</p>
-                        <p>도메인 네임 지식 (A 레코드, CNAME, 메일서버, 웹 포워딩)</p>
-                        <p>BTS Tools 구축 및 관리 (Redmine, Jira)</p>
-                        <p>오피스 365 (엑셀, VBA, 파워 포인트, 워드)</p>
-                        <p>Adobe Photoshop, VEGAS - 간단한 사무 업무 사용 수준</p>
-                    </div>
+                <div class="sub">
+                    <h3 class="sub-title">Technical</h3>
+                    <ul class="skill-list">
+                        <li><strong>프로그래밍</strong>C, Python, BASH, HTML, PHP, SQL(MySQL, MSSQL) — 기본 문법 / 시스템의 실행 흐름을 아는 수준</li>
+                        <li><strong>서버·OS</strong>리눅스(CentOS, Ubuntu), 유닉스(FreeBSD) — 간단한 웹, 파일, 데이터베이스 서비스 구축/관리 수준</li>
+                        <li><strong>가상화</strong>VMware, Hyper-V, VirtualBox, VMware vSphere 구축/관리</li>
+                        <li><strong>네트워크</strong>도메인 네임 지식 (A 레코드, CNAME, 메일서버, 웹 포워딩)</li>
+                        <li><strong>BTS</strong>Redmine, Jira 구축 및 관리</li>
+                        <li><strong>오피스</strong>Office 365 (Excel, VBA, PowerPoint, Word)</li>
+                        <li><strong>그래픽·영상</strong>Adobe Photoshop, VEGAS — 간단한 사무 업무 사용 수준</li>
+                    </ul>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top" id="scroll-top" aria-label="맨 위로 이동">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <footer class="footer">
+        <p>김종민 · <a href="mailto:jongmin@jongmin.kr">jongmin@jongmin.kr</a></p>
+    </footer>
 
-    <!-- JavaScript -->
-    <script src="js/modern-scripts.js"></script>
+    <button class="scroll-top" id="scroll-top" aria-label="맨 위로 이동">↑</button>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
